@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Sign in</h1>
+    </div>
+
+    <div>
+      <label for="pin"><h2>Enter Pin Code :</h2></label><br />
+    </div>
+
+    <div class="otp-bx">
+      <input type="text" maxlength="1" oninput="moveToNext(this, 'input2')" />
+      <input type="text" maxlength="1" id="input2" oninput="moveToNext(this, 'input3')" />
+      <input type="text" maxlength="1" id="input3" oninput="moveToNext(this, 'input4')" />
+      <input type="text" maxlength="1" id="input4" />
+    </div>
+
+    <div class="buttons">
+      <button type="button" onclick="cancel()">Cancel</button>
+      <button type="submit" onclick="checkPin()">Sign in</button>
+    </div>
+
+    <div id="warningMessage"></div>
+
+    <script>
+      function moveToNext(currentInput, nextInputId) {
+        const maxLength = currentInput.maxLength;
+        const currentLength = currentInput.value.length;
+
+        if (currentLength === maxLength) {
+          document.getElementById(nextInputId).focus();
+        }
+      }
+
+      function checkPin() {
+        const pinInputs = document.querySelectorAll(".otp-bx input");
+        const enteredPin = Array.from(pinInputs)
+          .map((input) => input.value)
+          .join("");
+
+        // Replace '1106' with your correct PIN
+        const correctPin = "1106";
+
+        if (enteredPin.length === correctPin.length) {
+          if (enteredPin === correctPin) {
+            // PIN is correct, open another file or perform your desired action
+            window.location.href = "New Text Document.txt";
+          } else {
+            document.getElementById("warningMessage").innerText = "Incorrect PIN. Please try again.";
+            // Clear entered PIN after displaying the warning
+            setTimeout(() => {
+              document.getElementById("warningMessage").innerText = "";
+              clearPinInputs();
+            }, 2000); // Clear the warning after 2 seconds
+          }
+        }
+      }
+
+      function clearPinInputs() {
+        const pinInputs = document.querySelectorAll(".otp-bx input");
+        pinInputs.forEach((input) => (input.value = ""));
+        document.getElementById("input1").focus();
+      }
+
+      function cancel() {
+        // Open a new window and close the current window
+        const newWindow = window.open("about:blank", "_self");
+        newWindow.close();
+      }
+    </script>
+  </body>
+</html>

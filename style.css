@@ -1,0 +1,66 @@
+body {
+  background-color: #1a73e8; /* Dark blue background color */
+  font-family: Arial, sans-serif; /* Use a common font for better compatibility */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  color: #fff; /* Set text color to white for better contrast */
+}
+
+div {
+  text-align: center; /* Center align the content in div */
+  margin-top: 20px; /* Add some top margin for spacing */
+}
+
+h1 {
+  color: #fff; /* Set the heading color to white for better contrast */
+}
+
+label {
+  display: block; /* Make labels block-level for better spacing */
+  margin-top: 10px; /* Add top margin for spacing */
+}
+
+.otp-bx {
+  display: flex;
+  justify-content: center; /* Center the OTP input horizontally */
+  margin-top: 20px; /* Add top margin for spacing */
+}
+
+.otp-bx input {
+  width: 50px;
+  font-size: 32px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 2px;
+  border: 2px solid #fff; /* White border for better contrast */
+  background: #1a73e8; /* Dark blue background */
+  font-weight: bold;
+  color: #fff;
+  outline: none;
+  transition: all 0.1s;
+}
+
+.buttons {
+  margin-top: 20px; /* Add top margin for spacing */
+}
+
+button {
+  padding: 10px 20px; /* Add padding to the buttons */
+  margin: 0 10px; /* Add margin to separate the buttons */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Style for Cancel button */
+button[type="button"] {
+  background-color: #ee0a0a; /* Light gray background */
+  color: #ffffff; /* Dark text color for contrast */
+  border: none; /* Remove button border */
+}
+
+/* Style for Sign in button */
+button[type="submit"] {
+  background-color: #4caf50; /* Green background */
+  color: #fff; /* White text color for contrast */
+  border: none; /* Remove button border */
+}
