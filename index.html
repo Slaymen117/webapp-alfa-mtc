@@ -7,11 +7,11 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div>
+    <div class="sign-in">
       <h1>Sign in</h1>
     </div>
 
-    <div>
+    <div class="enter-code">
       <label for="pin"><h2>Enter Pin Code :</h2></label><br />
     </div>
 
@@ -51,7 +51,7 @@
         if (enteredPin.length === correctPin.length) {
           if (enteredPin === correctPin) {
             // PIN is correct, open another file or perform your desired action
-            window.location.href = "New Text Document.txt";
+            window.location.href = "dashboard.html";
           } else {
             document.getElementById("warningMessage").innerText = "Incorrect PIN. Please try again.";
             // Clear entered PIN after displaying the warning
